@@ -25,20 +25,18 @@ public:
 
     int minDays(vector<int>& arr, int m, int k) {
         int n= arr.size();
-        long long need=(long long)k*(long long)m;
-	if(need>n) return -1;
-	int low=1, high=*max_element(arr.begin(), arr.end()), ans=-1;
+	if((long long)k*(long long)m>n) return -1;
+	int low=1, high=*max_element(arr.begin(), arr.end());
 
 	while(low<=high){
 		int mid=(low+high)/2;
 		if(countFlowers(arr,k,mid)>=m){
-			ans=mid;
 			high=mid-1;
 		}
 		else{
 			low=mid+1;
 		}
 	}
-	return ans;
+	return low;
     }
 };
