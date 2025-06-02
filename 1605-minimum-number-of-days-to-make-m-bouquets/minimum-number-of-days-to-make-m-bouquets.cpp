@@ -3,19 +3,16 @@ public:
 
     int countFlowers(vector<int> arr, int k, int mid){
 	int n= arr.size();
-	vector<int> b(n);
-	for(int i=0; i<n;i++){
-		if(arr[i]<= mid){
-			b[i]=1;
-		}
-	}
 	int consecutiveFlowers=0;
 	int count=0,i=0;
 	while(i<n){
-		if(b[i]==1){
+		if(arr[i]<=mid){
 			count++;
 		}
-		if(b[i]==0) count=0;
+        else{
+            count=0;
+        }
+
 		if(count==k){
 			consecutiveFlowers++;
 			count=0;
