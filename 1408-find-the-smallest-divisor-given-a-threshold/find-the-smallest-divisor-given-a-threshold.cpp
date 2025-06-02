@@ -3,7 +3,7 @@ public:
     long long divisorSum(vector<int>& nums, int mid){
         long long sum=0;
         for(auto it:nums){
-            sum+= ceil((double)it/(double(mid)));
+            sum+= (it+mid-1)/mid;
         }
         return sum;
     }
