@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    int countFlowers(vector<int> arr, int k, int mid){
+    int countFlowers(vector<int> &arr, int k, int mid){
 	int n= arr.size();
 	int consecutiveFlowers=0;
 	int count=0,i=0;
