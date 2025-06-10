@@ -4,7 +4,6 @@ public:
         int n= weights.size();
         int days=1, load=0;
         for(auto it: weights){
-            if(it>capacity) return INT_MAX;
             if(load+it<=capacity){
                 load+=it;
             }
@@ -19,8 +18,9 @@ public:
         
         int n= weights.size();
         if(n==0) return 0;
-        int high= n* (*max_element(weights.begin(), weights.end()));
-        int low=1,ans=0;
+        int low=*max_element(weights.begin(), weights.end());
+        int high= n*low;
+        int ans=0;
         while(low<=high){
             int mid=(low+high)/2;
             if(requiredDays(weights,mid)<=days){
