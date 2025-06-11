@@ -1,28 +1,47 @@
-Aggressive Cows
-Difficulty: MediumAccuracy: 59.57%Submissions: 136K+Points: 4Average Time: 30m
-You are given an array with unique elements of stalls[], which denote the position of a stall.
-You are also given an integer k which denotes the number of aggressive cows. 
-Your task is to assign stalls to k cows such that the minimum distance between any two of them is the maximum possible.
+ Aggressive Cows
+Moderate
 
-Examples :
+Problem statement
+You are given an array 'arr' consisting of 'n' integers which denote the position of a stall.
+You are also given an integer 'k' which denotes the number of aggressive cows.
+You are given the task of assigning stalls to 'k' cows such that the minimum distance between any two of them is the maximum possible.
+Print the maximum possible minimum distance.
 
-Input: stalls[] = [1, 2, 4, 8, 9], k = 3
-Output: 3
-Explanation: The first cow can be placed at stalls[0], 
-the second cow can be placed at stalls[2] and 
-the third cow can be placed at stalls[3]. 
-The minimum distance between cows, in this case, is 3, which also is the largest among all possible ways.
-Input: stalls[] = [10, 1, 2, 7, 5], k = 3
-Output: 4
-Explanation: The first cow can be placed at stalls[0],
-the second cow can be placed at stalls[1] and
-the third cow can be placed at stalls[4].
-The minimum distance between cows, in this case, is 4, which also is the largest among all possible ways.
-Input: stalls[] = [2, 12, 11, 3, 26, 7], k = 5
-Output: 1
-Explanation: Each cow can be placed in any of the stalls, as the no. of stalls are exactly equal to the number of cows.
-The minimum distance between cows, in this case, is 1, which also is the largest among all possible ways.
-Constraints:
-2 <= stalls.size() <= 106
-0 <= stalls[i] <= 108
-2 <= k <= stalls.size()
+
+Example:
+Input: 'n' = 3, 'k' = 2 and 'arr' = {1, 2, 3}
+
+Output: 2
+
+Explanation: The maximum possible minimum distance will be 2 when 2 cows are placed at positions {1, 3}. Here distance between cows is 2.
+Detailed explanation ( Input/output format, Notes, Images )
+Sample Input 1 :
+6 4
+0 3 4 7 10 9
+
+
+Sample Output 1 :
+3
+
+
+Explanation to Sample Input 1 :
+The maximum possible minimum distance between any two cows will be 3 when 4 cows are placed at positions {0, 3, 7, 10}. Here distance between cows are 3, 4 and 3 respectively.
+
+
+Sample Input 2 :
+5 2
+4 2 1 3 6
+
+Sample Output 2 :
+5
+
+
+Expected time complexity:
+Can you solve this in O(n * log(n)) time complexity?
+
+
+Constraints :
+2 <= 'n' <= 10 ^ 5
+2 <= 'k' <= n
+0 <= 'arr[i]' <= 10 ^ 9
+Time Limit: 1 sec.
