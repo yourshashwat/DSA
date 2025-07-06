@@ -2,13 +2,13 @@ class FindSumPairs {
 public:
     vector<int> vec1;
     vector<int> vec2;
-    unordered_map<int,int> mp1,mp2;
+    unordered_map<int,int> mp2;
     FindSumPairs(vector<int>& nums1, vector<int>& nums2) {
         vec1=nums1;
         vec2=nums2;
-        for(int &x: nums1){
-            mp1[x]++;
-        }
+        // for(int &x: nums1){
+        //     mp1[x]++;
+        // }
         for(int &x: nums2){
             mp2[x]++;
         }
@@ -22,8 +22,8 @@ public:
     
     int count(int tot) {
         int count=0;
-        for(auto &pair:mp1){
-            count+= pair.second*(mp2[tot-pair.first]);
+        for(int &x : vec1){
+            count+= mp2[tot-x];
         }
         return count;
     }
