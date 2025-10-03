@@ -94,5 +94,22 @@ int main(){
     for(int i = 0; i < n; ++i) {
         cout << result[i].id << "\t\t" << result[i].at << "\t\t" << result[i].bt << "\t\t" << result[i].wt << "\t\t" << result[i].tat << "\t\t" << result[i].ct << endl;
     }
+    // sequence of execution
+    cout << "\nGantt Chart:\n|";
+    for(int i = 0; i < n; ++i) {
+        cout << " P" << result[i].id << " |";
+    }
+    cout << endl;
+    
+
+    // Average waiting time and turnaround time
+    double totalWT = 0, totalTAT = 0;
+    for(int i = 0; i < n; ++i) {
+        totalWT += result[i].wt;
+        totalTAT += result[i].tat;
+    }
+    cout << "\nAverage Waiting Time: " << (totalWT / n);
+    cout << "\nAverage Turnaround Time: " << (totalTAT / n)<< endl;
+
     return 0;
 }
