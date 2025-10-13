@@ -1,36 +1,30 @@
 class Solution {
 public:
 
-    bool isAnagram(string one, string two){
-        if(one.size()!=two.size()) return false;
-        //unordered_map<char, int> mp;
-        int n=one.size();
-        vector<int> count(26,0);
-        for(int i=0;i<n;i++){
-           count[one[i]-'a']++;
-        }
-        for(int i=0;i<n;i++){
-           count[two[i]-'a']--;
-        }
-        for(int i=0;i<26;i++){
-           if(count[i]!=0) return false;
-        }
-        return true;
-
+    string getCanonical(string s){
+       sort(s.begin(), s.end());
+       return s;
     }
 
 
     vector<string> removeAnagrams(vector<string>& words) {
+        
         if(words.size()==1) return words;
-        int n=words.size();
-        for(int i=1;i<words.size();){
-            if(isAnagram(words[i],words[i-1])){
-                words.erase(words.begin()+i);
-            }
-            else{
-                i++;
-            }
+
+        int i=1;
+        string prevCanonical= getCanonical(words[0]);
+
+        for(int j=1; j<words.size(); j++){
+             string currCanonical= getCanonical(words[j]);
+             if(prevCanonical!=currCanonical){
+                prevCanonical= currCanonical;
+                words[i]= words[j];
+                i++; 
+             }
         }
+
+        words.resize(i);
+
         return words;
     }
 };
