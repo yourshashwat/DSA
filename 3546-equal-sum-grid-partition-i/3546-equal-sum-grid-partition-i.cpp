@@ -74,7 +74,7 @@ public:
 
         long long target = total / 2;
 
-        // 🔹 check horizontal cut
+        //  check horizontal cut
         long long curr = 0;
         for (int i = 0; i < m - 1; i++) {  // m-1 because last row not allowed
             for (int j = 0; j < n; j++) {
@@ -83,7 +83,7 @@ public:
             if (curr == target) return true;
         }
 
-        // 🔹 check vertical cut
+        //  check vertical cut
         curr = 0;
         for (int j = 0; j < n - 1; j++) {  // n-1 because last column not allowed
             for (int i = 0; i < m; i++) {
