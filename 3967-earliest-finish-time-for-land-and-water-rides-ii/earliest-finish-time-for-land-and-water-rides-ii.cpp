@@ -12,7 +12,9 @@ public:
         return finish2;
     }
     int earliestFinishTime(vector<int>& landStartTime, vector<int>& landDuration, vector<int>& waterStartTime, vector<int>& waterDuration) {
+        // first land then water
         int finish1=calculateFinishTime(landStartTime, landDuration, waterStartTime, waterDuration);
+        // first water then land
         int finish2= calculateFinishTime(waterStartTime, waterDuration, landStartTime, landDuration );
         return min(finish1,finish2);
     }
